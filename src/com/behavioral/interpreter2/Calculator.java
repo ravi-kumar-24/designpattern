@@ -106,12 +106,12 @@ class MultiplyExpression extends NonTerminalExpression {
 public class Calculator {
   private String expression;
   private HashMap operators;
-  private Context ctx;
+  private static Context ctx;
 
   public static void main(String[] args) {
-     calc = new Calculator();
+    Calculator calc = new Calculator();
     //instantiate the context
-     ctx = new Context();
+     ctx = calc.getContext();
 
     //set the expression to evaluate
     calc.setExpression("(a+b)*(c-d)");
@@ -139,6 +139,10 @@ public class Calculator {
 
   public void setContext(Context c) {
     ctx = c;
+  }
+
+  public Context getContext(){
+    return ctx;
   }
 
   public void setExpression(String expr) {

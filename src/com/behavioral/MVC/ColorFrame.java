@@ -6,8 +6,7 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.Observer;
 
-class ColorFrame extends JFrame
-implements java.util.Observer {
+class ColorFrame extends JFrame implements java.util.Observer {
 Vector observers;
 Color color;
 String color_name="black";
@@ -17,7 +16,7 @@ public ColorFrame(Subject s) {
 super("Colors"); //set frame caption
 getContentPane().add("Center", p);
 observers = new Vector();
-s.registerInterest(this); //register with Subject
+//s.registerInterest(this); //register with Subject
 setBounds(100, 100, 100, 100);
 setVisible(true);
 }
@@ -48,8 +47,13 @@ notifyObservers((JRadioButton)e.getSource());
 private void notifyObservers(JRadioButton rad) {
 //sends text of selected button to all observers
 String color = rad.getText();
-for (int i=0; i< observers.size(); i++) {
+/*for (int i=0; i< observers.size(); i++) {
 ((Observer)(observers.elementAt(i))).sendNotify(color);
- }
+ }*/
 }
+
+ @Override
+ public void update(Observable o, Object arg) {
+
+ }
 }

@@ -153,7 +153,7 @@ class DvdSubCategory implements TopTitle {
 }
 
 
-public class CORDemo {
+public class CORDemo1 {
    public static void main(String[] args) {
         String topTitle;
         DvdCategory comedy = new DvdCategory("Comedy");

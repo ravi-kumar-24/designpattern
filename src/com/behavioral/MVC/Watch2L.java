@@ -6,8 +6,7 @@ import java.awt.event.*;
 import java.util.*;
 
 
-public class Watch2L extends JFrame
-implements ActionListener, ItemListener, Subject {
+public class Watch2L extends JFrame implements ActionListener, ItemListener, Subject {
 
 Button Close;
 JRadioButton red, green, blue;
@@ -38,10 +37,20 @@ bgr.add(red);
 bgr.add(green);
 bgr.add(blue);
 ColorFrame cframe = new ColorFrame(this);
-ListFrame lframe = new ListFrame(this);
+//ListFrame lframe = new ListFrame(this);
 }
  public void registerInterest(Observer obs) {
 //adds observer to list in Vector
 observers.addElement(obs);
 }
+
+ @Override
+ public void actionPerformed(ActionEvent e) {
+
+ }
+
+ @Override
+ public void itemStateChanged(ItemEvent e) {
+
+ }
 }
